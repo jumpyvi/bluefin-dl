@@ -1,7 +1,5 @@
-# image_name := env("BUILD_IMAGE_NAME", "ghcr.io/alatiera/gnomeos-custom/gnomeos-homed")
 image_name := env("BUILD_IMAGE_NAME", "bluefin-distroless")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
-# image_tag := env("BUILD_IMAGE_TAG", "nightly")
 base_dir := env("BUILD_BASE_DIR", ".")
 filesystem := env("BUILD_FILESYSTEM", "btrfs")
 
