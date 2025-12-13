@@ -25,8 +25,9 @@
 - Make a layer that all Bluefin's can use for system things, like the gnome schemas, etc, that can just be copied into the containerfile. 
 
 ## Get started
-
-    ujust show-me-the-future
+    git clone https://github.com/projectbluefin/distroless.git
+    cd distroless
+    just show-me-the-future
 
 Will build and run Bluefin in a VM. This image is based on GNOME50 so most of the desktop Bluefin changes don't work. The automation is in place though, just check back often to see progress.
 
