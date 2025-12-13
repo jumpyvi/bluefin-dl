@@ -4,8 +4,6 @@ set -xeuo pipefail
 
 cp -avf "/tmp/ctx/files"/. /
 
-wget -O /usr/share/homebrew.tar.zst "https://github.com/ublue-os/packages/releases/download/homebrew-2025-11-11-01-29-58/homebrew-$(arch).tar.zst"
-
 # wallpaper needs whatever
 # jetbrains font?
 
