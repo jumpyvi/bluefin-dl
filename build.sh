@@ -5,6 +5,7 @@ set -xeuo pipefail
 # Copy files from context
 cp -avf "/tmp/ctx/files"/. /
 
+
 # Caffeine extension setup
 # The Caffeine extension is built/packaged into a temporary subdirectory.
 # It must be moved to the standard extensions directory for GNOME Shell to detect it.
@@ -47,8 +48,7 @@ curl -fsSLo /tmp/jbmono.zip "https://github.com/JetBrains/JetBrainsMono/releases
 unzip /tmp/jbmono.zip -d "/usr/share/fonts/JetBrains Mono/"
 rm /tmp/jbmono.zip
 
-# OS-release customization
-echo "DEFAULT_HOSTNAME=bluefin" | tee -a /usr/lib/os-release
+/tmp/ctx/build_scripts/base/branding.sh
 
 # Enable services
 systemctl enable brew-setup.service
