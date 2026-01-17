@@ -19,6 +19,10 @@ bootc *ARGS:
 
 generate-bootable-image $base_dir=base_dir $filesystem=filesystem:
     #!/usr/bin/env bash
+    if [ ! -e "${base_dir}/bootable.img" ] ; then
+        echo "Allocating 50G for bootable.img..."
+        fallocate -l 50G "${base_dir}/bootable.img"
+    fi
 
     just bootc install to-disk --composefs-backend \
          --via-loopback /data/bootable.img \
