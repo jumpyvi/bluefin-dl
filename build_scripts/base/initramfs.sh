@@ -24,6 +24,9 @@ cp /usr/lib/systemd/system/ostree-prepare-root.service "${INITRAMFS_EXTRACT_DIR}
 cp /usr/lib/systemd/system/ostree-prepare-root.service "${INITRAMFS_EXTRACT_DIR}/usr/lib/systemd/system/"
 ln -s /usr/lib/systemd/system/ostree-prepare-root.service "${INITRAMFS_EXTRACT_DIR}/usr/lib/systemd/system/initrd-root-fs.target.wants/"
 
+# instal the Bluefin plymouth watermark
+cp /usr/share/plymouth/themes/spinner/watermark.png "${INITRAMFS_EXTRACT_DIR}/usr/share/plymouth/themes/spinner/watermark.png"
+
 # compressing, then putting the newly generated initramfs back in
 find . | ${CPIO} -o -H newc > $NEW_INITRAMFS_BLOCK_FILE
 zstd $NEW_INITRAMFS_BLOCK_FILE
